@@ -20,13 +20,40 @@
     // $hobby5 = $_POST["hobby5"];
     // $hobby6 = $_POST["hobby6"];
 
+    $count = 1;
 
-    print "<br>Name: $name";
-    print "<br>Email: $email";
-    print "<br>Age: $age";
-    print "<br>School: $school";
-    print "<br>Class: $class";
-    print "<br>Hobby: ";
+    function getHobby($hobby)
+    {
+        global $count;
+
+        if (array_key_exists($hobby, $_POST)) {
+            $hb = $_POST[$hobby];
+            if ($hb != "Other") {
+                echo $count;
+                $count++;
+                echo ". " . $hb . "<br></br>";
+            } else {
+                if (array_key_exists("other", $_POST)) {
+                    echo $count;
+                    $count++;
+                    echo ". " . $_POST["other"] . "<br></br>";
+                }
+            }
+        }
+    }
+
+    print "<br></br>Name: $name";
+    print "<br></br>Email: $email";
+    print "<br></br>Age: $age";
+    print "<br></br>School: $school";
+    print "<br></br>Class: $class";
+    print "<br></br>Hobby: <br></br>";
+    getHobby("hobby1");
+    getHobby("hobby2");
+    getHobby("hobby3");
+    getHobby("hobby4");
+    getHobby("hobby5");
+    getHobby("hobby6");
     ?>
 </body>
 
