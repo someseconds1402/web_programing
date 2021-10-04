@@ -20,14 +20,6 @@
     // $hobby5 = $_POST["hobby5"];
     // $hobby6 = $_POST["hobby6"];
 
-    $count = 1;
-    $count++;
-    function getHobby($hobby)
-    {
-        echo "$_POST[$hobby]";
-        if (!$_POST[$hobby])
-            return $_POST[$hobby];
-    }
 
     print "<br>Name: $name";
     print "<br>Email: $email";
@@ -35,7 +27,6 @@
     print "<br>School: $school";
     print "<br>Class: $class";
     print "<br>Hobby: ";
-    // getHobby("name");
     ?>
 </body>
 
